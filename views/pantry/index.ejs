@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Pantry</title>
+</head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Your Pantry</h1>
+    <a href="/users/<%=user._id%>/pantry/new">Add a food</a>
+    <ul>
+      <% pantry.forEach((food)=>{ %>
+        <a href="/users/<%= user._id %>/pantry/<%= food._id %>">
+            <li><%= food.name %></li>
+        </a>
+      <% }) %>
+    </ul>
+  </body>
+</html>
